@@ -14,6 +14,9 @@ class App extends Component {
     let height = window.innerHeight + 30
     let width = window.innerWidth
 
+    console.log(height)
+    console.log(width)
+
     let contStyle = {
       width: width,
       height: height - 30,

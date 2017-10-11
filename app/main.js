@@ -47,7 +47,7 @@ app.on('ready', () => {
   const window = new BrowserWindow({
     width: electronConfig.URL_LAUNCHER_WIDTH,
     height: electronConfig.URL_LAUNCHER_HEIGHT,
-    frame: !!(electronConfig.URL_LAUNCHER_FRAME),
+    frame: false,
     title: electronConfig.URL_LAUNCHER_TITLE,
     kiosk: !!(electronConfig.URL_LAUNCHER_KIOSK),
     webPreferences: {
