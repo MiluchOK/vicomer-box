@@ -16,7 +16,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <div style=`width:${width}px;height:${height}px;overflow:hidden;` >
+        <div style="width:" + width + "px;height:" + height + "px;overflow:hidden;" >
           <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQW71LSwpNEu_0dCEki9B5TK6w4uBqcauoAjp1qnwFxqV65cWKo2kjcNZ4fC85pvYGBSMCo3NllTYwb/embed?start=true&loop=true&delayms=3000"
             frameborder="0"
             width={width}
