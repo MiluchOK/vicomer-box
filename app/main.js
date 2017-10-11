@@ -45,11 +45,11 @@ if (process.env.NODE_ENV === 'development') {
 app.on('ready', () => {
   // here we actually configure the behavour of electronJS
   const window = new BrowserWindow({
-    width: electronConfig.URL_LAUNCHER_WIDTH,
-    height: electronConfig.URL_LAUNCHER_HEIGHT,
+    // width: electronConfig.URL_LAUNCHER_WIDTH,
+    // height: electronConfig.URL_LAUNCHER_HEIGHT,
     frame: false,
-    title: electronConfig.URL_LAUNCHER_TITLE,
-    kiosk: !!(electronConfig.URL_LAUNCHER_KIOSK),
+    // title: electronConfig.URL_LAUNCHER_TITLE,
+    kiosk: true,
     webPreferences: {
       nodeIntegration: !!(electronConfig.URL_LAUNCHER_NODE),
       zoomFactor: electronConfig.URL_LAUNCHER_ZOOM,
