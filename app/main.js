@@ -1,5 +1,6 @@
 const electron = require('electron');
 const path = require('path');
+const url = require('url')
 
 const { app, BrowserWindow } = electron;
 
@@ -49,7 +50,7 @@ app.on('ready', () => {
     // height: electronConfig.URL_LAUNCHER_HEIGHT,
     frame: false,
     // title: electronConfig.URL_LAUNCHER_TITLE,
-    kiosk: true,
+    // kiosk: true,
     webPreferences: {
       nodeIntegration: !!(electronConfig.URL_LAUNCHER_NODE),
       zoomFactor: electronConfig.URL_LAUNCHER_ZOOM,
@@ -65,10 +66,15 @@ app.on('ready', () => {
 
   // if the env-var is set to true,
   // a portion of the screen will be dedicated to the chrome-dev-tools
-  if (electronConfig.URL_LAUNCHER_CONSOLE) {
+  if (true) {
     window.openDevTools();
   }
 
   // the big red button, here we go
-  window.loadURL(electronConfig.URL_LAUNCHER_URL);
+  console.log("LOaing.")
+  window.loadURL(url.format({
+  pathname: path.join(__dirname, 'index.html'),
+  protocol: 'file:',
+  slashes: true
+  }))
 });
