@@ -11,10 +11,21 @@ var files = fs.readdirSync('./');
 class App extends Component {
   render() {
     return (
+
+      let height = window.innerHeight
+      let width = window.innerWidth
+
       <div className="App">
-        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQW71LSwpNEu_0dCEki9B5TK6w4uBqcauoAjp1qnwFxqV65cWKo2kjcNZ4fC85pvYGBSMCo3NllTYwb/embed?start=true&loop=true&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true">
-          
-        </iframe>
+        <div style=`width:${width}px;height:${height}px;overflow:hidden;` >
+          <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQW71LSwpNEu_0dCEki9B5TK6w4uBqcauoAjp1qnwFxqV65cWKo2kjcNZ4fC85pvYGBSMCo3NllTYwb/embed?start=true&loop=true&delayms=3000"
+            frameborder="0"
+            width={width}
+            height={height}
+            allowfullscreen="true"
+            mozallowfullscreen="true"
+            webkitallowfullscreen="true">
+          </iframe>
+        </div>
       </div>
     );
   }
