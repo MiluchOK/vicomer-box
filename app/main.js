@@ -50,7 +50,7 @@ app.on('ready', () => {
     // height: electronConfig.URL_LAUNCHER_HEIGHT,
     frame: false,
     // title: electronConfig.URL_LAUNCHER_TITLE,
-    // kiosk: true,
+    kiosk: true,
     webPreferences: {
       nodeIntegration: !!(electronConfig.URL_LAUNCHER_NODE),
       zoomFactor: electronConfig.URL_LAUNCHER_ZOOM,
@@ -66,7 +66,7 @@ app.on('ready', () => {
 
   // if the env-var is set to true,
   // a portion of the screen will be dedicated to the chrome-dev-tools
-  if (true) {
+  if (false) {
     window.openDevTools();
   }
 
