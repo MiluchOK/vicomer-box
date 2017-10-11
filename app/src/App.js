@@ -12,8 +12,8 @@ class App extends Component {
   render() {
     return (
 
-      let height = window.innerHeight
-      let width = window.innerWidth
+      var height = window.innerHeight
+      var width = window.innerWidth
 
       <div className="App">
         <div style=`width:${width}px;height:${height}px;overflow:hidden;` >
