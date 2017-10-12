@@ -46,12 +46,12 @@ if (process.env.NODE_ENV === 'development') {
 app.on('ready', () => {
   // here we actually configure the behavour of electronJS
   const window = new BrowserWindow({
-    width: 1820,
-    height: 980,
+    // width: 1820,
+    // height: 980,
     frame: false,
-    fullscreen: true,
+    // fullscreen: true,
     // title: electronConfig.URL_LAUNCHER_TITLE,
-    kiosk: true,
+    // kiosk: true,
     webPreferences: {
       nodeIntegration: !!(electronConfig.URL_LAUNCHER_NODE),
       zoomFactor: electronConfig.URL_LAUNCHER_ZOOM,
@@ -67,14 +67,14 @@ app.on('ready', () => {
 
   // if the env-var is set to true,
   // a portion of the screen will be dedicated to the chrome-dev-tools
-  if (false) {
+  if (true) {
     window.openDevTools();
   }
 
   // the big red button, here we go
   console.log("LOaing.")
   window.loadURL(url.format({
-  pathname: path.join(__dirname, 'index.html'),
+  pathname: path.join(__dirname, 'build', 'index.html'),
   protocol: 'file:',
   slashes: true
   }))
