@@ -46,8 +46,8 @@ if (process.env.NODE_ENV === 'development') {
 app.on('ready', () => {
   // here we actually configure the behavour of electronJS
   const window = new BrowserWindow({
-    // width: 1820,
-    // height: 980,
+    width: electronConfig.URL_LAUNCHER_WIDTH,
+    height: electronConfig.URL_LAUNCHER_HEIGHT,
     frame: false,
     fullscreen: true,
     // title: electronConfig.URL_LAUNCHER_TITLE,
