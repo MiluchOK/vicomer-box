@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import axios from 'axios'
 import './App.css';
 
 // https://github.com/electron/electron/issues/7300
@@ -12,8 +11,11 @@ var files = fs.readdirSync('./');
 class App extends Component {
 
   constructor(props){
+    super(props)
+    const url = "https://docs.google.com/presentation/d/e/2PACX-1vQnSbwQHHlO3nf6nlB85KxH-n_rIXbHQTnhUVQK8hoHM_U548L-mSk1VO7OlyfFlphw-b6_Qfnz6EJe/embed"
     this.state = {
-      presentationUrl: process.env.URL_LAUNCHER_TOUCH
+      presentationUrl: process.env.PRESENTATION_URL || url,
+      queryParams: "?start=true&loop=true&delayms=3000"
     }
   }
 
@@ -35,9 +37,8 @@ class App extends Component {
 
     return (
       <div className="App">
-        <div style={contStyle} >
-
-          <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQW71LSwpNEu_0dCEki9B5TK6w4uBqcauoAjp1qnwFxqV65cWKo2kjcNZ4fC85pvYGBSMCo3NllTYwb/embed?start=true&loop=true&delayms=3000"
+        <div style={contStyle}>
+          <iframe src={this.state.presentationUrl + this.state.queryParams}
             frameborder="0"
             width={width}
             height={height}
