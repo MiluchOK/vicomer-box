@@ -67,7 +67,7 @@ app.on('ready', () => {
 
   // if the env-var is set to true,
   // a portion of the screen will be dedicated to the chrome-dev-tools
-  if (true) {
+  if (false) {
     window.openDevTools();
   }
 
